@@ -7,6 +7,6 @@ Waktu solat for iPhone
 - Sumardi Shukor <sumardi@wutmedia.com>
 - Syahmi Ismail <syahmi@wutmedia.com>
 
-Credits
+# Todo
 
-- http://ibnuyahya.com/simple-jakim-esolat-wrapper/
+- Create a simple wrapper class to fetch content from JAKIM e-solat portal.
