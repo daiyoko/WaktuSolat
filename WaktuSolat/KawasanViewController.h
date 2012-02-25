@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KawasanViewController : UITableViewController
+@interface KawasanViewController : UITableViewController {
+    NSDictionary *kawasan;
+}
 
 @end

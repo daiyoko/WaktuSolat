@@ -57,7 +57,7 @@
 				<string>ktn03</string>
 			</array>
 			<array>
-				<string>K.Bharu, Bachok, Pasir Puteh, Tumpat, Pasir Mas, Tnh. Merah, Machang, Kuala Krai, Mukim Chiku</string>
+				<string>Kota Bharu, Bachok, Pasir Puteh, Tumpat, Pasir Mas, Tnh. Merah, Machang, Kuala Krai, Mukim Chiku</string>
 				<string>ktn01</string>
 			</array>
 		</array>
@@ -117,7 +117,7 @@
 				<string>prk02</string>
 			</array>
 			<array>
-				<string>Tapah,Slim River dan Tanjung Malim</string>
+				<string>Tapah, Slim River dan Tanjung Malim</string>
 				<string>prk01</string>
 			</array>
 			<array>
@@ -129,7 +129,7 @@
 				<string>prk04</string>
 			</array>
 			<array>
-				<string>Teluk Intan, Bagan Datoh, Kg.Gajah,Sri Iskandar, Beruas,Parit,Lumut,Setiawan dan Pulau Pangkor</string>
+				<string>Teluk Intan, Bagan Datoh, Kg. Gajah, Sri Iskandar, Beruas,Parit,Lumut,Setiawan dan Pulau Pangkor</string>
 				<string>prk05</string>
 			</array>
 			<array>
@@ -228,7 +228,7 @@
 		<key>Selangor dan Wilayah Persekutuan</key>
 		<array>
 			<array>
-				<string>Gombak, H.Selangor, Rawang, H.Langat, Sepang, Petaling, S.Alam</string>
+				<string>Gombak, H. Selangor, Rawang, H. Langat, Sepang, Petaling, S. Alam</string>
 				<string>sgr01</string>
 			</array>
 			<array>
@@ -263,7 +263,7 @@
 				<string>trg02</string>
 			</array>
 		</array>
-		<key>Wilayah Persekutuan Labuan </key>
+		<key>Wilayah Persekutuan Labuan</key>
 		<array>
 			<array>
 				<string>Labuan</string>

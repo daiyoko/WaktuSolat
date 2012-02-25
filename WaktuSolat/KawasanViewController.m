@@ -18,6 +18,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"eSolat" ofType:@"plist"];
+    
+    kawasan = [[NSDictionary alloc] initWithDictionary:[[NSDictionary dictionaryWithContentsOfFile:filePath] objectForKey:@"eSolat"]];
+    
+    self.navigationItem.title = @"Kawasan";
 }
 
 - (void)viewDidUnload
@@ -31,13 +37,24 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [kawasan count];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [[[kawasan allValues] objectAtIndex:section] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [[kawasan allKeys] objectAtIndex:section];
 }
 
 - (void)dealloc
 {
+    [kawasan dealloc];
     [super dealloc];
 }
 
@@ -48,10 +65,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if(cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
     }
     
     // do something
+    
+    cell.textLabel.text = [[[[kawasan allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0];
     
     return cell;
 }
