@@ -1,6 +1,6 @@
-# Project Description
+# Description
 
-Waktu solat for iPhone. The app fetch the prayer time from the JAKIM eSolat portal.
+Waktu Solat is an iPhone app. The app fetch prayer time from JAKIM eSolat portal which is Malaysia's premier prayer time reference. 
 
 # License
 
