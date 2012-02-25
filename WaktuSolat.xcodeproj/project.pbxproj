@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F86DBAC14F8E20500606189 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F86DBAB14F8E20500606189 /* UIKit.framework */; };
+		9F86DBAE14F8E20500606189 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F86DBAD14F8E20500606189 /* Foundation.framework */; };
+		9F86DBB014F8E20500606189 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F86DBAF14F8E20500606189 /* CoreGraphics.framework */; };
+		9F86DBB614F8E20500606189 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F86DBB414F8E20500606189 /* InfoPlist.strings */; };
+		9F86DBB814F8E20500606189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F86DBB714F8E20500606189 /* main.m */; };
+		9F86DBBC14F8E20500606189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F86DBBB14F8E20500606189 /* AppDelegate.m */; };
+		9F86DBBF14F8E20500606189 /* KawasanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F86DBBE14F8E20500606189 /* KawasanViewController.m */; };
+		9F86DBC214F8E20500606189 /* KawasanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F86DBC014F8E20500606189 /* KawasanViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9F86DBA714F8E20500606189 /* WaktuSolat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaktuSolat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F86DBAB14F8E20500606189 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9F86DBAD14F8E20500606189 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9F86DBAF14F8E20500606189 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9F86DBB314F8E20500606189 /* WaktuSolat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WaktuSolat-Info.plist"; sourceTree = "<group>"; };
+		9F86DBB514F8E20500606189 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9F86DBB714F8E20500606189 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F86DBB914F8E20500606189 /* WaktuSolat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WaktuSolat-Prefix.pch"; sourceTree = "<group>"; };
+		9F86DBBA14F8E20500606189 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F86DBBB14F8E20500606189 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F86DBBD14F8E20500606189 /* KawasanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KawasanViewController.h; sourceTree = "<group>"; };
+		9F86DBBE14F8E20500606189 /* KawasanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KawasanViewController.m; sourceTree = "<group>"; };
+		9F86DBC114F8E20500606189 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KawasanViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F86DBA414F8E20500606189 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F86DBAC14F8E20500606189 /* UIKit.framework in Frameworks */,
+				9F86DBAE14F8E20500606189 /* Foundation.framework in Frameworks */,
+				9F86DBB014F8E20500606189 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F86DB9C14F8E20500606189 = {
+			isa = PBXGroup;
+			children = (
+				9F86DBB114F8E20500606189 /* WaktuSolat */,
+				9F86DBAA14F8E20500606189 /* Frameworks */,
+				9F86DBA814F8E20500606189 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F86DBA814F8E20500606189 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F86DBA714F8E20500606189 /* WaktuSolat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F86DBAA14F8E20500606189 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F86DBAB14F8E20500606189 /* UIKit.framework */,
+				9F86DBAD14F8E20500606189 /* Foundation.framework */,
+				9F86DBAF14F8E20500606189 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F86DBB114F8E20500606189 /* WaktuSolat */ = {
+			isa = PBXGroup;
+			children = (
+				9F86DBBA14F8E20500606189 /* AppDelegate.h */,
+				9F86DBBB14F8E20500606189 /* AppDelegate.m */,
+				9F86DBBD14F8E20500606189 /* KawasanViewController.h */,
+				9F86DBBE14F8E20500606189 /* KawasanViewController.m */,
+				9F86DBC014F8E20500606189 /* KawasanViewController.xib */,
+				9F86DBB214F8E20500606189 /* Supporting Files */,
+			);
+			path = WaktuSolat;
+			sourceTree = "<group>";
+		};
+		9F86DBB214F8E20500606189 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F86DBB314F8E20500606189 /* WaktuSolat-Info.plist */,
+				9F86DBB414F8E20500606189 /* InfoPlist.strings */,
+				9F86DBB714F8E20500606189 /* main.m */,
+				9F86DBB914F8E20500606189 /* WaktuSolat-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F86DBA614F8E20500606189 /* WaktuSolat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F86DBC514F8E20500606189 /* Build configuration list for PBXNativeTarget "WaktuSolat" */;
+			buildPhases = (
+				9F86DBA314F8E20500606189 /* Sources */,
+				9F86DBA414F8E20500606189 /* Frameworks */,
+				9F86DBA514F8E20500606189 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaktuSolat;
+			productName = WaktuSolat;
+			productReference = 9F86DBA714F8E20500606189 /* WaktuSolat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F86DB9E14F8E20500606189 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Wutmedia;
+			};
+			buildConfigurationList = 9F86DBA114F8E20500606189 /* Build configuration list for PBXProject "WaktuSolat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9F86DB9C14F8E20500606189;
+			productRefGroup = 9F86DBA814F8E20500606189 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F86DBA614F8E20500606189 /* WaktuSolat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F86DBA514F8E20500606189 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F86DBB614F8E20500606189 /* InfoPlist.strings in Resources */,
+				9F86DBC214F8E20500606189 /* KawasanViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F86DBA314F8E20500606189 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F86DBB814F8E20500606189 /* main.m in Sources */,
+				9F86DBBC14F8E20500606189 /* AppDelegate.m in Sources */,
+				9F86DBBF14F8E20500606189 /* KawasanViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9F86DBB414F8E20500606189 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F86DBB514F8E20500606189 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9F86DBC014F8E20500606189 /* KawasanViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F86DBC114F8E20500606189 /* en */,
+			);
+			name = KawasanViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F86DBC314F8E20500606189 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9F86DBC414F8E20500606189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F86DBC614F8E20500606189 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WaktuSolat/WaktuSolat-Prefix.pch";
+				INFOPLIST_FILE = "WaktuSolat/WaktuSolat-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9F86DBC714F8E20500606189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WaktuSolat/WaktuSolat-Prefix.pch";
+				INFOPLIST_FILE = "WaktuSolat/WaktuSolat-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F86DBA114F8E20500606189 /* Build configuration list for PBXProject "WaktuSolat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F86DBC314F8E20500606189 /* Debug */,
+				9F86DBC414F8E20500606189 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F86DBC514F8E20500606189 /* Build configuration list for PBXNativeTarget "WaktuSolat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F86DBC614F8E20500606189 /* Debug */,
+				9F86DBC714F8E20500606189 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F86DB9E14F8E20500606189 /* Project object */;
+}
