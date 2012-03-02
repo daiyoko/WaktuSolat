@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E82A6D51500D3BF00A12EF0 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E82A6D41500D3BF00A12EF0 /* icon@2x.png */; };
+		6E82A6D71500D3C200A12EF0 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E82A6D61500D3C200A12EF0 /* icon.png */; };
 		6ECFFB4614F8E8FA00151025 /* eSolat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6ECFFB4514F8E8FA00151025 /* eSolat.plist */; };
 		9F86DBAC14F8E20500606189 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F86DBAB14F8E20500606189 /* UIKit.framework */; };
 		9F86DBAE14F8E20500606189 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F86DBAD14F8E20500606189 /* Foundation.framework */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E82A6D41500D3BF00A12EF0 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		6E82A6D61500D3C200A12EF0 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		6ECFFB4514F8E8FA00151025 /* eSolat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = eSolat.plist; sourceTree = "<group>"; };
 		9F86DBA714F8E20500606189 /* WaktuSolat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaktuSolat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F86DBAB14F8E20500606189 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -49,9 +53,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EB5F5031500EFF600AF21BA /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				6E82A6D61500D3C200A12EF0 /* icon.png */,
+				6E82A6D41500D3BF00A12EF0 /* icon@2x.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		9F86DB9C14F8E20500606189 = {
 			isa = PBXGroup;
 			children = (
+				6EB5F5031500EFF600AF21BA /* Image */,
 				9F86DBB114F8E20500606189 /* WaktuSolat */,
 				9F86DBAA14F8E20500606189 /* Frameworks */,
 				9F86DBA814F8E20500606189 /* Products */,
@@ -155,6 +169,8 @@
 				9F86DBB614F8E20500606189 /* InfoPlist.strings in Resources */,
 				9F86DBC214F8E20500606189 /* KawasanViewController.xib in Resources */,
 				6ECFFB4614F8E8FA00151025 /* eSolat.plist in Resources */,
+				6E82A6D51500D3BF00A12EF0 /* icon@2x.png in Resources */,
+				6E82A6D71500D3C200A12EF0 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
