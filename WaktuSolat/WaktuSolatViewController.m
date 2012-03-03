@@ -37,13 +37,22 @@
     
     waktuSolatLabel = [[NSMutableArray alloc] initWithObjects:@"Imsak", @"Subuh", @"Syuruk", @"Zohor", @"Asar", @"Maghrib", @"Isyak", nil];
     
-//    self.navigationItem.title = @"Waktu Solat";
     self.navigationController.toolbarHidden = NO;
     
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
     UIBarButtonItem *kawasan = [[UIBarButtonItem alloc] initWithTitle:@"Lokasi" style:UIBarButtonItemStyleBordered target:self action:@selector(kawasan)];
     self.navigationItem.rightBarButtonItem = kawasan;
     [kawasan release];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    self.tableView.separatorColor = [UIColor clearColor];
 }
 
 
@@ -134,6 +143,9 @@
     
     if(cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell.contentView.backgroundColor = [UIColor clearColor];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.detailTextLabel.textColor = [UIColor colorWithRed:44/255.0 green:128/255.0 blue:33/255.0 alpha:1];
     }
     
     cell.textLabel.text = [waktuSolatLabel objectAtIndex:indexPath.row];

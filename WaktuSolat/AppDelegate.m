@@ -34,6 +34,10 @@
     
     UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:self.waktuSolatViewController] autorelease];
     
+    navigationController.navigationBar.tintColor = [UIColor colorWithRed:74/255.0 green:158/255.0 blue:55/255.0 alpha:1];
+    navigationController.toolbar.tintColor = [UIColor colorWithRed:74/255.0 green:158/255.0 blue:55/255.0 alpha:1];
+    [application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+    
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
