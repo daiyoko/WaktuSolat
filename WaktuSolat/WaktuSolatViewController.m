@@ -37,7 +37,7 @@
     
     waktuSolatLabel = [[NSMutableArray alloc] initWithObjects:@"Imsak", @"Subuh", @"Syuruk", @"Zohor", @"Asar", @"Maghrib", @"Isyak", nil];
     
-    self.navigationItem.title = @"Waktu Solat";
+//    self.navigationItem.title = @"Waktu Solat";
     self.navigationController.toolbarHidden = NO;
     
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
@@ -85,6 +85,30 @@
     
     [self.navigationController.toolbar setItems:[NSArray arrayWithObject:location]];
     [locationLabel release];
+    
+    // Custom titleView
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake((320-200)/2, (44-34)/2, 200, 34)];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 20)];
+    titleLabel.textAlignment = UITextAlignmentCenter;
+    titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.text = @"Waktu Solat";
+    [titleView addSubview:titleLabel];
+    [titleLabel release];
+    
+    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 200, 14)];
+    dateLabel.textAlignment = UITextAlignmentCenter;
+    dateLabel.font = [UIFont fontWithName:@"Helvetica" size:11];
+    dateLabel.backgroundColor = [UIColor clearColor];
+    dateLabel.textColor = [UIColor whiteColor];
+    dateLabel.text = [data objectForKey:@"Date"];
+    [titleView addSubview:dateLabel];
+    [dateLabel release];
+    
+    self.navigationItem.titleView = titleView;
+    [titleView release];
     
     [self.tableView reloadData];
 }
@@ -147,6 +171,8 @@
     [data setObject:[dateFormatter stringFromDate:prayerTime.asar] forKey:@"Asar"];
     [data setObject:[dateFormatter stringFromDate:prayerTime.maghrib] forKey:@"Maghrib"];
     [data setObject:[dateFormatter stringFromDate:prayerTime.isyak] forKey:@"Isyak"];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    [data setObject:[dateFormatter stringFromDate:prayerTime.imsak] forKey:@"Date"];
     [data setObject:prayerTime.code forKey:@"Code"];
     [data setObject:prayerTime.location forKey:@"Location"];
     
