@@ -171,7 +171,7 @@
     [data setObject:[dateFormatter stringFromDate:prayerTime.asar] forKey:@"Asar"];
     [data setObject:[dateFormatter stringFromDate:prayerTime.maghrib] forKey:@"Maghrib"];
     [data setObject:[dateFormatter stringFromDate:prayerTime.isyak] forKey:@"Isyak"];
-    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    [dateFormatter setDateFormat:@"EEEE, dd LLLL yyyy"];
     [data setObject:[dateFormatter stringFromDate:prayerTime.imsak] forKey:@"Date"];
     [data setObject:prayerTime.code forKey:@"Code"];
     [data setObject:prayerTime.location forKey:@"Location"];
