@@ -98,7 +98,7 @@
 {
     UIView *headerView = [[UIView alloc] init];
     headerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"headerView.png"]];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 1, 320, 20)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 1, 320, 20)];
     titleLabel.text = [self tableView:tableView titleForHeaderInSection:section];
     titleLabel.shadowColor = [UIColor blackColor];
     titleLabel.shadowOffset = CGSizeMake(0.5, 0.5);
