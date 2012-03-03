@@ -12,6 +12,9 @@
 @interface WaktuSolatViewController : UITableViewController <JakimSolatDelegate> {
     NSMutableArray *waktuSolat;
     NSMutableArray *waktuSolatLabel;
+    NSString *path;
 }
+
+- (void)displayData;
 
 @end

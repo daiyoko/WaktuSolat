@@ -16,39 +16,24 @@
 
 @implementation WaktuSolatViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSError *error;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); //1
-    NSString *documentsDirectory = [paths objectAtIndex:0]; //2
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"WaktuSolat.plist"]; //3
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    path = [[NSString alloc] initWithString:[documentsDirectory stringByAppendingPathComponent:@"solat.plist"]];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if (![fileManager fileExistsAtPath: path]) //4
+    if (![fileManager fileExistsAtPath:path])
     {
-        NSString *bundle = [[NSBundle mainBundle] pathForResource:@"WaktuSolat" ofType:@"plist"]; //5
         
-        [fileManager copyItemAtPath:bundle toPath: path error:&error]; //6
+        NSString *bundle = [[NSBundle mainBundle] pathForResource:@"solat" ofType:@"plist"];
+
+        [fileManager copyItemAtPath:bundle toPath:path error:&error];
     }
-    NSLog(@"%@", path);
     
     waktuSolatLabel = [[NSMutableArray alloc] initWithObjects:@"Imsak", @"Subuh", @"Syuruk", @"Zohor", @"Asar", @"Maghrib", @"Isyak", nil];
     
@@ -59,17 +44,21 @@
     UIBarButtonItem *kawasan = [[UIBarButtonItem alloc] initWithTitle:@"Lokasi" style:UIBarButtonItemStyleBordered target:self action:@selector(kawasan)];
     self.navigationItem.rightBarButtonItem = kawasan;
     [kawasan release];
-    
-    JakimSolatParser *parser = [[JakimSolatParser alloc] initWithCode:@"sgr03"];
-    parser.delegate = self;
-    [parser parse];
 }
 
-- (void)viewDidUnload
+
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    [super viewDidAppear:animated];
+  
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+
+    NSString *code = [data objectForKey:@"Code"] != nil ? [data objectForKey:@"Code"] : @"sgr03";
+    
+    JakimSolatParser *parser = [[JakimSolatParser alloc] initWithCode:code];
+    parser.delegate = self;
+    [parser parse];
+    [parser release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -79,10 +68,7 @@
 
 - (void)displayData
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); //1
-    NSString *documentsDirectory = [paths objectAtIndex:0]; //2
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"WaktuSolat.plist"]; //3
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile: path];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     
     waktuSolat = [[NSMutableArray alloc] initWithObjects:[data objectForKey:@"Imsak"], [data objectForKey:@"Subuh"], [data objectForKey:@"Syuruk"], [data objectForKey:@"Zohor"], [data objectForKey:@"Asar"], [data objectForKey:@"Maghrib"], [data objectForKey:@"Isyak"], nil];
     [self.tableView reloadData];
@@ -111,67 +97,12 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
-    
     cell.textLabel.text = [waktuSolatLabel objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [waktuSolat objectAtIndex:indexPath.row];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -187,25 +118,12 @@
 
 - (void)jakimSolatParser:(JakimSolatParser *)parser didParsePrayerTime:(JakimPrayerTime *)prayerTime
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); //1
-    NSString *documentsDirectory = [paths objectAtIndex:0]; //2
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"WaktuSolat.plist"]; //3
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile: path];
+
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+8"]];
     [dateFormatter setDateFormat:@"HH:mm"];
-    
-    NSLog(@"Kawasan = %@", prayerTime.location);
-    NSLog(@"Kod = %@", prayerTime.code);
-
-    NSLog(@"Imsak = %@", [dateFormatter stringFromDate:prayerTime.imsak]);
-    NSLog(@"Subuh = %@", [dateFormatter stringFromDate:prayerTime.subuh]);
-    NSLog(@"Syuruk = %@", [dateFormatter stringFromDate:prayerTime.syuruk]);
-    NSLog(@"Zohor = %@", [dateFormatter stringFromDate:prayerTime.zohor]);
-    NSLog(@"Asar = %@", [dateFormatter stringFromDate:prayerTime.asar]);
-    NSLog(@"Maghrib = %@", [dateFormatter stringFromDate:prayerTime.maghrib]);
-    NSLog(@"Isyak = %@", [dateFormatter stringFromDate:prayerTime.isyak]);
     
     [data setObject:[dateFormatter stringFromDate:prayerTime.imsak] forKey:@"Imsak"];
     [data setObject:[dateFormatter stringFromDate:prayerTime.subuh] forKey:@"Subuh"];
@@ -221,17 +139,22 @@
     [data release];
     
     [self displayData];
-    NSLog(@"%@", waktuSolat);
 }
 
 - (void)jakimSolatParser:(JakimSolatParser *)parser didFailWithError:(NSError *)error
 {
-    NSLog(@"JakimSolatWrapper : Failed!");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failed" message:@"Cannot load data from server. Try again!" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    
+    [self displayData];
 }
 
 - (void)dealloc
 {
     [waktuSolat release];
+    [waktuSolatLabel release];
+    [path release];
     [super dealloc];
 }
 
