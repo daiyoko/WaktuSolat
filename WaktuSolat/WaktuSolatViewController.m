@@ -89,7 +89,7 @@
     // Custom titleView
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake((320-200)/2, (44-34)/2, 200, 34)];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 20)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 200, 20)];
     titleLabel.textAlignment = UITextAlignmentCenter;
     titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     titleLabel.backgroundColor = [UIColor clearColor];
@@ -98,7 +98,7 @@
     [titleView addSubview:titleLabel];
     [titleLabel release];
     
-    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 200, 14)];
+    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 200, 14)];
     dateLabel.textAlignment = UITextAlignmentCenter;
     dateLabel.font = [UIFont fontWithName:@"Helvetica" size:11];
     dateLabel.backgroundColor = [UIColor clearColor];
