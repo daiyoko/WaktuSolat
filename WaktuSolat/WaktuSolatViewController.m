@@ -71,6 +71,21 @@
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     
     waktuSolat = [[NSMutableArray alloc] initWithObjects:[data objectForKey:@"Imsak"], [data objectForKey:@"Subuh"], [data objectForKey:@"Syuruk"], [data objectForKey:@"Zohor"], [data objectForKey:@"Asar"], [data objectForKey:@"Maghrib"], [data objectForKey:@"Isyak"], nil];
+    
+    UILabel *locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
+    locationLabel.backgroundColor = [UIColor clearColor];
+    locationLabel.font = [UIFont fontWithName:@"Helvetica" size:12];
+    locationLabel.textColor = [UIColor whiteColor];
+    locationLabel.textAlignment = UITextAlignmentCenter;
+    locationLabel.numberOfLines = 2;
+    locationLabel.lineBreakMode = UILineBreakModeWordWrap;
+    locationLabel.text = [data objectForKey:@"Location"];
+    
+    UIBarButtonItem *location = [[UIBarButtonItem alloc] initWithCustomView:locationLabel];
+    
+    [self.navigationController.toolbar setItems:[NSArray arrayWithObject:location]];
+    [locationLabel release];
+    
     [self.tableView reloadData];
 }
 
