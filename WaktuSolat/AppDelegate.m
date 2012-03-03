@@ -9,16 +9,19 @@
 #import "AppDelegate.h"
 
 #import "KawasanViewController.h"
+#import "WaktuSolatViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize kawasanViewController = _kawasanViewController;
+@synthesize waktuSolatViewController = _waktuSolatViewController;
 
 - (void)dealloc
 {
     [_window release];
     [_kawasanViewController release];
+    [_waktuSolatViewController release];
     [super dealloc];
 }
 
@@ -26,9 +29,10 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.kawasanViewController = [[[KawasanViewController alloc] initWithNibName:@"KawasanViewController" bundle:nil] autorelease];
     
-    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:self.kawasanViewController] autorelease];
+    self.waktuSolatViewController = [[[WaktuSolatViewController alloc] initWithNibName:@"WaktuSolatViewController" bundle:nil] autorelease];
+    
+    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:self.waktuSolatViewController] autorelease];
     
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

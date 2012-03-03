@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @class KawasanViewController;
+@class WaktuSolatViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) KawasanViewController *kawasanViewController;
+
+@property (strong, nonatomic) WaktuSolatViewController *waktuSolatViewController;
 
 @end
