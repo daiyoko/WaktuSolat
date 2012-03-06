@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Wutmedia. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "WaktuSolatViewController.h"
 #import "KawasanViewController.h"
 #import "JakimPrayerTime.h"
@@ -39,11 +40,24 @@
     
     self.navigationController.toolbarHidden = NO;
     
+    CALayer *roundedCorner = [self.navigationController navigationBar].layer;
+    
+    CGRect bounds = roundedCorner.bounds;
+    bounds.size.height += 5.0f;
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(5.0, 5.0)];
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = bounds;
+    maskLayer.path = maskPath.CGPath;
+    
+    [roundedCorner addSublayer:maskLayer];
+    roundedCorner.mask = maskLayer;
+    
+    
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
     UIBarButtonItem *kawasan = [[UIBarButtonItem alloc] initWithTitle:@"Lokasi" style:UIBarButtonItemStyleBordered target:self action:@selector(kawasan)];
     self.navigationItem.rightBarButtonItem = kawasan;
-    [kawasan release];
     
+    [kawasan release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -85,6 +99,8 @@
     locationLabel.backgroundColor = [UIColor clearColor];
     locationLabel.font = [UIFont fontWithName:@"Helvetica" size:12];
     locationLabel.textColor = [UIColor whiteColor];
+    locationLabel.shadowColor = [UIColor blackColor];
+    locationLabel.shadowOffset = CGSizeMake(0.5, 0.5);
     locationLabel.textAlignment = UITextAlignmentCenter;
     locationLabel.numberOfLines = 2;
     locationLabel.lineBreakMode = UILineBreakModeWordWrap;
@@ -104,6 +120,8 @@
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.text = @"Waktu Solat";
+    titleLabel.shadowColor = [UIColor blackColor];
+    titleLabel.shadowOffset = CGSizeMake(0.5, 0.5);
     [titleView addSubview:titleLabel];
     [titleLabel release];
     
@@ -113,6 +131,8 @@
     dateLabel.backgroundColor = [UIColor clearColor];
     dateLabel.textColor = [UIColor whiteColor];
     dateLabel.text = [data objectForKey:@"Date"];
+    dateLabel.shadowColor = [UIColor blackColor];
+    dateLabel.shadowOffset = CGSizeMake(0.5, 0.5);
     [titleView addSubview:dateLabel];
     [dateLabel release];
     
@@ -174,7 +194,7 @@
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+8"]];
-    [dateFormatter setDateFormat:@"HH:mm"];
+    [dateFormatter setDateFormat:@"h:mm a"];
     
     [data setObject:[dateFormatter stringFromDate:prayerTime.imsak] forKey:@"Imsak"];
     [data setObject:[dateFormatter stringFromDate:prayerTime.subuh] forKey:@"Subuh"];

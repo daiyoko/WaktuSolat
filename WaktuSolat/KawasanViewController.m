@@ -74,6 +74,7 @@
     if(cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
         cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
     cell.textLabel.text = [[[[kawasan allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0];
@@ -106,7 +107,6 @@
     titleLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
     titleLabel.textColor = [UIColor whiteColor];
     [headerView addSubview:titleLabel];
-    
     
     return headerView;
 }

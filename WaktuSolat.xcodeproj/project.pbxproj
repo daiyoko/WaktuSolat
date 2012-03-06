@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E2974ED1505EC77001A2FEE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2974EC1505EC77001A2FEE /* QuartzCore.framework */; };
 		6E66D3651502082D001BAE53 /* solat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D3641502082D001BAE53 /* solat.plist */; };
 		6E66D38D150246C9001BAE53 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D385150246C9001BAE53 /* background.png */; };
 		6E66D38E150246C9001BAE53 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D386150246C9001BAE53 /* background@2x.png */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E2974EC1505EC77001A2FEE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6E66D3641502082D001BAE53 /* solat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = solat.plist; sourceTree = "<group>"; };
 		6E66D385150246C9001BAE53 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = WaktuSolat/background.png; sourceTree = "<group>"; };
 		6E66D386150246C9001BAE53 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "WaktuSolat/background@2x.png"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2974ED1505EC77001A2FEE /* QuartzCore.framework in Frameworks */,
 				6EB5F5061500F1AA00AF21BA /* libxml2.dylib in Frameworks */,
 				9F86DBAC14F8E20500606189 /* UIKit.framework in Frameworks */,
 				9F86DBAE14F8E20500606189 /* Foundation.framework in Frameworks */,
@@ -122,6 +125,7 @@
 		9F86DB9C14F8E20500606189 = {
 			isa = PBXGroup;
 			children = (
+				6E2974EC1505EC77001A2FEE /* QuartzCore.framework */,
 				9F86DBB114F8E20500606189 /* WaktuSolat */,
 				9F86DBAA14F8E20500606189 /* Frameworks */,
 				9F86DBA814F8E20500606189 /* Products */,
@@ -336,6 +340,7 @@
 				GCC_PREFIX_HEADER = "WaktuSolat/WaktuSolat-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "WaktuSolat/WaktuSolat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -348,6 +353,7 @@
 				GCC_PREFIX_HEADER = "WaktuSolat/WaktuSolat-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "WaktuSolat/WaktuSolat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
