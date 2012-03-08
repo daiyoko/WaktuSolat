@@ -52,7 +52,6 @@
     [roundedCorner addSublayer:maskLayer];
     roundedCorner.mask = maskLayer;
     
-    
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
     UIBarButtonItem *kawasan = [[UIBarButtonItem alloc] initWithTitle:@"Lokasi" style:UIBarButtonItemStyleBordered target:self action:@selector(kawasan)];
     self.navigationItem.rightBarButtonItem = kawasan;
