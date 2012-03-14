@@ -40,17 +40,17 @@
     
     self.navigationController.toolbarHidden = NO;
     
-    CALayer *roundedCorner = [self.navigationController navigationBar].layer;
+    CALayer *roundedCornerBottom = [self.navigationController toolbar].layer;
     
-    CGRect bounds = roundedCorner.bounds;
-    bounds.size.height += 5.0f;
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(5.0, 5.0)];
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.frame = bounds;
-    maskLayer.path = maskPath.CGPath;
+    CGRect boundsBottom = roundedCornerBottom.bounds;
+    boundsBottom.size.height += 0;
+    UIBezierPath *maskPathBottom = [UIBezierPath bezierPathWithRoundedRect:boundsBottom byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(5.0, 5.0)];
+    CAShapeLayer *maskLayerBottom = [CAShapeLayer layer];
+    maskLayerBottom.frame = boundsBottom;
+    maskLayerBottom.path = maskPathBottom.CGPath;
     
-    [roundedCorner addSublayer:maskLayer];
-    roundedCorner.mask = maskLayer;
+    [roundedCornerBottom addSublayer:maskLayerBottom];
+    roundedCornerBottom.mask = maskLayerBottom;
     
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
     UIBarButtonItem *kawasan = [[UIBarButtonItem alloc] initWithTitle:@"Lokasi" style:UIBarButtonItemStyleBordered target:self action:@selector(kawasan)];

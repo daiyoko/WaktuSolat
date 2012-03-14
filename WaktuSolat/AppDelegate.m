@@ -16,12 +16,16 @@
 @synthesize window = _window;
 @synthesize kawasanViewController = _kawasanViewController;
 @synthesize waktuSolatViewController = _waktuSolatViewController;
+@synthesize splashView = _splashView;
+@synthesize rateApp = _rateApp;
 
 - (void)dealloc
 {
     [_window release];
     [_kawasanViewController release];
     [_waktuSolatViewController release];
+    [_splashView release];
+    [_rateApp release];
     [super dealloc];
 }
 
@@ -34,12 +38,23 @@
     
     UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:self.waktuSolatViewController] autorelease];
     
+    [navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar.png"] forBarMetrics:UIBarMetricsDefault];
+    
     navigationController.navigationBar.tintColor = [UIColor colorWithRed:74/255.0 green:158/255.0 blue:55/255.0 alpha:1];
     navigationController.toolbar.tintColor = [UIColor colorWithRed:74/255.0 green:158/255.0 blue:55/255.0 alpha:1];
-    [application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+    [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    
+    [_window addSubview:_kawasanViewController.view];
+    [_window makeKeyAndVisible];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    
+    [self performSelector:@selector(removeSplash) withObject:nil afterDelay:1.5];
     
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    
+    [self _rateApp];
+    
     return YES;
 }
 
@@ -68,6 +83,42 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)removeSplash
+{
+    [_splashView removeFromSuperview];
+    [_splashView release];
+}
+
+#pragma mark - Rate Waktu Solat
+
+- (void)_rateApp 
+{
+    int launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchCount"];
+    launchCount++;
+    [[NSUserDefaults standardUserDefaults] setInteger:launchCount forKey:@"launchCount"];
+    
+    BOOL neverRate = [[NSUserDefaults standardUserDefaults] boolForKey:@"neverRate"];
+    
+    if ((neverRate != YES) && (launchCount > 5)) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enjoying Waktu Solat?" message:@"If so, please rate this app on the App Store so we can keep the free updates coming." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes, rate it!", @"Never ask again", @"Remind me later", nil];
+        alert.delegate = self;
+        [alert show];
+        [alert release];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex 
+{
+    if (buttonIndex == 0) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"neverRate"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/waktu-solat/id507750415?mt=8"]];
+    } else if (buttonIndex == 1) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"neverRate"];
+    } else if (buttonIndex == 2) {
+        // Do nothing
+    }
 }
 
 @end

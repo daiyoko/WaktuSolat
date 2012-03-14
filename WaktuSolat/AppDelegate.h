@@ -19,4 +19,8 @@
 
 @property (strong, nonatomic) WaktuSolatViewController *waktuSolatViewController;
 
+@property (strong, nonatomic) UIImageView *splashView;
+
+@property (strong, nonatomic) UIAlertView *rateApp;
+
 @end
