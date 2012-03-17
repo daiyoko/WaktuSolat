@@ -85,6 +85,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)waktuSolat {
+	// Handle the notificaton when the app is running
+	NSLog(@"Received Notification %@",waktuSolat);
+}
+
 - (void)removeSplash
 {
     [_splashView removeFromSuperview];
@@ -101,7 +106,7 @@
     
     BOOL neverRate = [[NSUserDefaults standardUserDefaults] boolForKey:@"neverRate"];
     
-    if ((neverRate != YES) && (launchCount > 5)) {
+    if ((neverRate != YES) && (launchCount > 10)) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enjoying Waktu Solat?" message:@"If so, please rate this app on the App Store so we can keep the free updates coming." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes, rate it!", @"Never ask again", @"Remind me later", nil];
         alert.delegate = self;
         [alert show];

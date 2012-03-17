@@ -12,6 +12,7 @@
 		6E4C77361510895900B46D7A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C77321510895900B46D7A /* Default@2x.png */; };
 		6E4C77371510895900B46D7A /* nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C77331510895900B46D7A /* nav_bar.png */; };
 		6E4C77381510895900B46D7A /* nav_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C77341510895900B46D7A /* nav_bar@2x.png */; };
+		6E640A551513C1550030B1F1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E640A541513C1550030B1F1 /* Settings.bundle */; };
 		6E66D3651502082D001BAE53 /* solat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D3641502082D001BAE53 /* solat.plist */; };
 		6E66D38D150246C9001BAE53 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D385150246C9001BAE53 /* background.png */; };
 		6E66D38E150246C9001BAE53 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D386150246C9001BAE53 /* background@2x.png */; };
@@ -42,6 +43,7 @@
 		6E4C77321510895900B46D7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "WaktuSolat/Default@2x.png"; sourceTree = "<group>"; };
 		6E4C77331510895900B46D7A /* nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav_bar.png; path = WaktuSolat/nav_bar.png; sourceTree = "<group>"; };
 		6E4C77341510895900B46D7A /* nav_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nav_bar@2x.png"; path = "WaktuSolat/nav_bar@2x.png"; sourceTree = "<group>"; };
+		6E640A541513C1550030B1F1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		6E66D3641502082D001BAE53 /* solat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = solat.plist; sourceTree = "<group>"; };
 		6E66D385150246C9001BAE53 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = WaktuSolat/background.png; sourceTree = "<group>"; };
 		6E66D386150246C9001BAE53 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "WaktuSolat/background@2x.png"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				9F86DBB214F8E20500606189 /* Supporting Files */,
 				6ECFFB4514F8E8FA00151025 /* eSolat.plist */,
 				6E66D3641502082D001BAE53 /* solat.plist */,
+				6E640A541513C1550030B1F1 /* Settings.bundle */,
 			);
 			path = WaktuSolat;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				6E4C77361510895900B46D7A /* Default@2x.png in Resources */,
 				6E4C77371510895900B46D7A /* nav_bar.png in Resources */,
 				6E4C77381510895900B46D7A /* nav_bar@2x.png in Resources */,
+				6E640A551513C1550030B1F1 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
