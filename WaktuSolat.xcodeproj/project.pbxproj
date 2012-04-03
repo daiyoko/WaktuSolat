@@ -18,6 +18,7 @@
 		6E66D38E150246C9001BAE53 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D386150246C9001BAE53 /* background@2x.png */; };
 		6E66D393150246C9001BAE53 /* headerView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D38B150246C9001BAE53 /* headerView.png */; };
 		6E66D394150246C9001BAE53 /* headerView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D38C150246C9001BAE53 /* headerView@2x.png */; };
+		6E6C918F152A0C22004FB62C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6C918E152A0C22004FB62C /* Crashlytics.framework */; };
 		6EB5F5061500F1AA00AF21BA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB5F5051500F1AA00AF21BA /* libxml2.dylib */; };
 		6EB5F5091500F2AC00AF21BA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5F5071500F2AC00AF21BA /* icon.png */; };
 		6EB5F50A1500F2AC00AF21BA /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5F5081500F2AC00AF21BA /* icon@2x.png */; };
@@ -49,6 +50,7 @@
 		6E66D386150246C9001BAE53 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "WaktuSolat/background@2x.png"; sourceTree = "<group>"; };
 		6E66D38B150246C9001BAE53 /* headerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = headerView.png; path = WaktuSolat/headerView.png; sourceTree = "<group>"; };
 		6E66D38C150246C9001BAE53 /* headerView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "headerView@2x.png"; path = "WaktuSolat/headerView@2x.png"; sourceTree = "<group>"; };
+		6E6C918E152A0C22004FB62C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6EB5F5051500F1AA00AF21BA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6EB5F5071500F2AC00AF21BA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = WaktuSolat/icon.png; sourceTree = "<group>"; };
 		6EB5F5081500F2AC00AF21BA /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "WaktuSolat/icon@2x.png"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				9F86DBAC14F8E20500606189 /* UIKit.framework in Frameworks */,
 				9F86DBAE14F8E20500606189 /* Foundation.framework in Frameworks */,
 				9F86DBB014F8E20500606189 /* CoreGraphics.framework in Frameworks */,
+				6E6C918F152A0C22004FB62C /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB5F5051500F1AA00AF21BA /* libxml2.dylib */,
+				6E6C918E152A0C22004FB62C /* Crashlytics.framework */,
 				6E2974EC1505EC77001A2FEE /* QuartzCore.framework */,
 				9F86DBAB14F8E20500606189 /* UIKit.framework */,
 				9F86DBAD14F8E20500606189 /* Foundation.framework */,
@@ -195,6 +199,7 @@
 				9F86DBA314F8E20500606189 /* Sources */,
 				9F86DBA414F8E20500606189 /* Frameworks */,
 				9F86DBA514F8E20500606189 /* Resources */,
+				6E6C918C152A0B91004FB62C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,6 +261,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E6C918C152A0B91004FB62C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run c9607a61a2d51077dca71905dc9bdfc4b28386e4";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F86DBA314F8E20500606189 /* Sources */ = {
@@ -340,6 +361,10 @@
 		9F86DBC614F8E20500606189 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaktuSolat/WaktuSolat-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
@@ -353,6 +378,10 @@
 		9F86DBC714F8E20500606189 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaktuSolat/WaktuSolat-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;

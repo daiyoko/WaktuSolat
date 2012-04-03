@@ -15,3 +15,10 @@ Documentation/Generated
 doxygenWarnings.txt
 *.xcodeproj/xcuserdata/*.xcuserdatad
 *.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad
+IIViewDeckController.h
+
+IIViewDeckController.m
+
+WrapController.h
+
+WrapController.m
