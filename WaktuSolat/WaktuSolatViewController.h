@@ -17,4 +17,6 @@
 
 - (void)displayData;
 
+- (IBAction)kawasan;
+
 @end

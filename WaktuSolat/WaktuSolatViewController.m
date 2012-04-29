@@ -40,23 +40,7 @@
     
     self.navigationController.toolbarHidden = NO;
     
-    CALayer *roundedCornerBottom = [self.navigationController toolbar].layer;
-    
-    CGRect boundsBottom = roundedCornerBottom.bounds;
-    boundsBottom.size.height += 0;
-    UIBezierPath *maskPathBottom = [UIBezierPath bezierPathWithRoundedRect:boundsBottom byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(5.0, 5.0)];
-    CAShapeLayer *maskLayerBottom = [CAShapeLayer layer];
-    maskLayerBottom.frame = boundsBottom;
-    maskLayerBottom.path = maskPathBottom.CGPath;
-    
-    [roundedCornerBottom addSublayer:maskLayerBottom];
-    roundedCornerBottom.mask = maskLayerBottom;
-    
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
-    UIBarButtonItem *kawasan = [[UIBarButtonItem alloc] initWithTitle:@"Lokasi" style:UIBarButtonItemStyleBordered target:self action:@selector(kawasan)];
-    self.navigationItem.rightBarButtonItem = kawasan;
-    
-    [kawasan release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -94,6 +78,9 @@
     
     waktuSolat = [[NSMutableArray alloc] initWithObjects:[data objectForKey:@"Imsak"], [data objectForKey:@"Subuh"], [data objectForKey:@"Syuruk"], [data objectForKey:@"Zohor"], [data objectForKey:@"Asar"], [data objectForKey:@"Maghrib"], [data objectForKey:@"Isyak"], nil];
     
+    UITapGestureRecognizer *locationLabelGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(kawasan)];
+    locationLabelGesture.numberOfTapsRequired = 1;
+    
     UILabel *locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
     locationLabel.backgroundColor = [UIColor clearColor];
     locationLabel.font = [UIFont fontWithName:@"Helvetica" size:12];
@@ -104,16 +91,20 @@
     locationLabel.numberOfLines = 2;
     locationLabel.lineBreakMode = UILineBreakModeWordWrap;
     locationLabel.text = [data objectForKey:@"Location"];
+    [locationLabel setUserInteractionEnabled:YES];
+    [locationLabel addGestureRecognizer:locationLabelGesture];
     
     UIBarButtonItem *location = [[UIBarButtonItem alloc] initWithCustomView:locationLabel];
+    [locationLabelGesture release];
     
     [self.navigationController.toolbar setItems:[NSArray arrayWithObject:location]];
     [locationLabel release];
+    [location release];
     
     // Custom titleView
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake((320-200)/2, (44-34)/2, 200, 34)];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 200, 20)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 20)];
     titleLabel.textAlignment = UITextAlignmentCenter;
     titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     titleLabel.backgroundColor = [UIColor clearColor];
@@ -124,7 +115,7 @@
     [titleView addSubview:titleLabel];
     [titleLabel release];
     
-    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 200, 14)];
+    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 200, 14)];
     dateLabel.textAlignment = UITextAlignmentCenter;
     dateLabel.font = [UIFont fontWithName:@"Helvetica" size:11];
     dateLabel.backgroundColor = [UIColor clearColor];
