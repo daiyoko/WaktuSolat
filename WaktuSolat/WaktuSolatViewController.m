@@ -30,7 +30,6 @@
     
     if (![fileManager fileExistsAtPath:path])
     {
-        
         NSString *bundle = [[NSBundle mainBundle] pathForResource:@"solat" ofType:@"plist"];
 
         [fileManager copyItemAtPath:bundle toPath:path error:&error];
@@ -41,6 +40,15 @@
     self.navigationController.toolbarHidden = NO;
     
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
+    
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 30, 20)];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
+    
+    [[self navigationItem] setRightBarButtonItem:barButton];
+    
+    [activityIndicator startAnimating];
+    [barButton release];
+    [activityIndicator release];
 }
 
 - (void)viewWillAppear:(BOOL)animated

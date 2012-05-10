@@ -10,7 +10,6 @@
 
 #import "KawasanViewController.h"
 #import "WaktuSolatViewController.h"
-#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -56,8 +55,6 @@
     [self.window makeKeyAndVisible];
     
     [self _rateApp];
-    
-    [Crashlytics startWithAPIKey:@"c9607a61a2d51077dca71905dc9bdfc4b28386e4"];
     
     return YES;
 }
