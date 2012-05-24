@@ -29,6 +29,8 @@
 		6EC72AD81539918100EA8132 /* toolbar_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC72AD61539918100EA8132 /* toolbar_img.png */; };
 		6EC72AD91539918100EA8132 /* toolbar_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC72AD71539918100EA8132 /* toolbar_img@2x.png */; };
 		6ECFFB4614F8E8FA00151025 /* eSolat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6ECFFB4514F8E8FA00151025 /* eSolat.plist */; };
+		6EE54957156E2D4A00CAA0EF /* btn_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE54955156E2D4A00CAA0EF /* btn_settings.png */; };
+		6EE54958156E2D4A00CAA0EF /* btn_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE54956156E2D4A00CAA0EF /* btn_settings@2x.png */; };
 		9F86DBAC14F8E20500606189 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F86DBAB14F8E20500606189 /* UIKit.framework */; };
 		9F86DBAE14F8E20500606189 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F86DBAD14F8E20500606189 /* Foundation.framework */; };
 		9F86DBB014F8E20500606189 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F86DBAF14F8E20500606189 /* CoreGraphics.framework */; };
@@ -66,6 +68,8 @@
 		6EC72AD61539918100EA8132 /* toolbar_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toolbar_img.png; path = WaktuSolat/toolbar_img.png; sourceTree = "<group>"; };
 		6EC72AD71539918100EA8132 /* toolbar_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "toolbar_img@2x.png"; path = "WaktuSolat/toolbar_img@2x.png"; sourceTree = "<group>"; };
 		6ECFFB4514F8E8FA00151025 /* eSolat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = eSolat.plist; sourceTree = "<group>"; };
+		6EE54955156E2D4A00CAA0EF /* btn_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_settings.png; path = WaktuSolat/btn_settings.png; sourceTree = "<group>"; };
+		6EE54956156E2D4A00CAA0EF /* btn_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_settings@2x.png"; path = "WaktuSolat/btn_settings@2x.png"; sourceTree = "<group>"; };
 		9F86DBA714F8E20500606189 /* WaktuSolat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaktuSolat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F86DBAB14F8E20500606189 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9F86DBAD14F8E20500606189 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +117,8 @@
 		6EB5F5031500EFF600AF21BA /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				6EE54955156E2D4A00CAA0EF /* btn_settings.png */,
+				6EE54956156E2D4A00CAA0EF /* btn_settings@2x.png */,
 				6EC72AD61539918100EA8132 /* toolbar_img.png */,
 				6EC72AD71539918100EA8132 /* toolbar_img@2x.png */,
 				6E4C77311510895900B46D7A /* Default.png */,
@@ -261,6 +267,8 @@
 				6E640A551513C1550030B1F1 /* Settings.bundle in Resources */,
 				6EC72AD81539918100EA8132 /* toolbar_img.png in Resources */,
 				6EC72AD91539918100EA8132 /* toolbar_img@2x.png in Resources */,
+				6EE54957156E2D4A00CAA0EF /* btn_settings.png in Resources */,
+				6EE54958156E2D4A00CAA0EF /* btn_settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

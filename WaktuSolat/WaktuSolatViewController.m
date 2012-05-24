@@ -41,6 +41,11 @@
     
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
     
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] init];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_settings.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(kawasan)];    
+    self.navigationItem.leftBarButtonItem.enabled = YES;
+    
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 30, 20)];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
     
@@ -49,6 +54,7 @@
     [activityIndicator startAnimating];
     [barButton release];
     [activityIndicator release];
+    [leftButton release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
