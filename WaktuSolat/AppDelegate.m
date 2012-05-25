@@ -38,8 +38,13 @@
     
     UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:self.waktuSolatViewController] autorelease];
     
-    [navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar.png"] forBarMetrics:UIBarMetricsDefault];
-    [navigationController.toolbar setBackgroundImage:[UIImage imageNamed:@"toolbar_img.png"] forToolbarPosition:0 barMetrics:UIBarMetricsDefault];
+    // Add iOS 4.3 and below compatibilty
+    
+    if ([navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
+    {
+        [navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar.png"] forBarMetrics:UIBarMetricsDefault];
+        [navigationController.toolbar setBackgroundImage:[UIImage imageNamed:@"toolbar_img.png"] forToolbarPosition:0 barMetrics:UIBarMetricsDefault];
+    }
     
     navigationController.navigationBar.tintColor = [UIColor colorWithRed:74/255.0 green:158/255.0 blue:55/255.0 alpha:1];
     navigationController.toolbar.tintColor = [UIColor colorWithRed:74/255.0 green:158/255.0 blue:55/255.0 alpha:1];
