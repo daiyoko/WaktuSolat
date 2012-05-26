@@ -10,6 +10,7 @@
 
 @interface KawasanViewController : UITableViewController {
     NSDictionary *kawasan;
+    NSMutableArray *sortedKawasan;
 }
 
 @end

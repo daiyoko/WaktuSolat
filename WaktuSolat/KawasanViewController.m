@@ -21,6 +21,12 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"eSolat" ofType:@"plist"];
     
     kawasan = [[NSDictionary alloc] initWithDictionary:[[NSDictionary dictionaryWithContentsOfFile:filePath] objectForKey:@"eSolat"]];
+
+    NSArray *sortedKeys = [[kawasan allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    sortedKawasan = [[NSMutableArray alloc] init];
+    for (NSString *key in sortedKeys) {
+        [sortedKawasan addObject:key];
+    }
     
     self.navigationItem.title = @"Kawasan";
 }
@@ -46,22 +52,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [kawasan count];
+    return [sortedKawasan count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[kawasan allValues] objectAtIndex:section] count];
+    return [[kawasan objectForKey:[sortedKawasan objectAtIndex:section]] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [[kawasan allKeys] objectAtIndex:section];
+    return [sortedKawasan objectAtIndex:section];
 }
 
 - (void)dealloc
 {
-    [kawasan dealloc];
+    [kawasan release];
+    [sortedKawasan release];
     [super dealloc];
 }
 
@@ -77,18 +84,17 @@
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
-    cell.textLabel.text = [[[[kawasan allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0];
+    cell.textLabel.text = [[[kawasan objectForKey:[sortedKawasan objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row] objectAtIndex:0];
     
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@", [[[[kawasan allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:1]);
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"solat.plist"];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile: path];
-    [data setObject:[[[[kawasan allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:1] forKey:@"Code"];
+    [data setObject:[[[kawasan objectForKey:[sortedKawasan objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row] objectAtIndex:1] forKey:@"Code"];
     [data writeToFile:path atomically:YES];
     [data release];
     
