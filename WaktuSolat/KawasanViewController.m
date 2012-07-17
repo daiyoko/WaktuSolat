@@ -28,7 +28,7 @@
         [sortedKawasan addObject:key];
     }
     
-    self.navigationItem.title = @"Kawasan";
+    self.navigationItem.title = @"Location";
 }
 
 - (void)viewDidAppear:(BOOL)animated
