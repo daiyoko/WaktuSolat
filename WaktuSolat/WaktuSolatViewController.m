@@ -10,7 +10,7 @@
 #import "WaktuSolatViewController.h"
 #import "KawasanViewController.h"
 #import "JakimPrayerTime.h"
-#import "SettingViewController.h"
+#import "SettingsViewController.h"
 
 @interface WaktuSolatViewController ()
 
@@ -44,7 +44,7 @@
     
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] init];
     self.navigationItem.leftBarButtonItem = leftButton;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_settings.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(setting)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_settings.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(settings)];
     self.navigationItem.leftBarButtonItem.enabled = YES;
 
     [leftButton release];
@@ -180,14 +180,14 @@
 
 -(IBAction)kawasan 
 {
-    KawasanViewController *kawasanViewController = [[KawasanViewController alloc] initWithNibName:@"kawasanViewController" bundle:nil];
+    KawasanViewController *kawasanViewController = [[KawasanViewController alloc] initWithNibName:@"KawasanViewController" bundle:nil];
     [self.navigationController pushViewController:kawasanViewController animated:YES];
 }
 
--(IBAction)setting
+-(IBAction)settings
 {
-     SettingViewController *settingViewController = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
-    [self.navigationController pushViewController:settingViewController animated:YES];
+    SettingsViewController *settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+    [self.navigationController pushViewController:settingsViewController animated:YES];
 }
 
 - (void)jakimSolatParser:(JakimSolatParser *)parser didParsePrayerTime:(JakimPrayerTime *)prayerTime

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E14569515C7DC94005AC6EA /* bg_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E14569315C7DC94005AC6EA /* bg_settings.png */; };
+		6E14569615C7DC94005AC6EA /* bg_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E14569415C7DC94005AC6EA /* bg_settings@2x.png */; };
+		6E15B29315C7D08700789D78 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E15B29115C7D08700789D78 /* SettingsViewController.m */; };
+		6E15B29415C7D08700789D78 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E15B29215C7D08700789D78 /* SettingsViewController.xib */; };
 		6E2974ED1505EC77001A2FEE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2974EC1505EC77001A2FEE /* QuartzCore.framework */; };
 		6E4C77351510895900B46D7A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C77311510895900B46D7A /* Default.png */; };
 		6E4C77361510895900B46D7A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C77321510895900B46D7A /* Default@2x.png */; };
@@ -18,10 +22,6 @@
 		6E66D38E150246C9001BAE53 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D386150246C9001BAE53 /* background@2x.png */; };
 		6E66D393150246C9001BAE53 /* headerView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D38B150246C9001BAE53 /* headerView.png */; };
 		6E66D394150246C9001BAE53 /* headerView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D38C150246C9001BAE53 /* headerView@2x.png */; };
-		6EAB793C15B45CE20092A343 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB793A15B45CE20092A343 /* SettingViewController.m */; };
-		6EAB793D15B45CE20092A343 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAB793B15B45CE20092A343 /* SettingViewController.xib */; };
-		6EAB794915B467030092A343 /* bg_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAB794715B467030092A343 /* bg_settings.png */; };
-		6EAB794A15B467030092A343 /* bg_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAB794815B467030092A343 /* bg_settings@2x.png */; };
 		6EB5F5061500F1AA00AF21BA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB5F5051500F1AA00AF21BA /* libxml2.dylib */; };
 		6EB5F5091500F2AC00AF21BA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5F5071500F2AC00AF21BA /* icon.png */; };
 		6EB5F50A1500F2AC00AF21BA /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5F5081500F2AC00AF21BA /* icon@2x.png */; };
@@ -46,6 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E14569315C7DC94005AC6EA /* bg_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_settings.png; path = WaktuSolat/bg_settings.png; sourceTree = "<group>"; };
+		6E14569415C7DC94005AC6EA /* bg_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_settings@2x.png"; path = "WaktuSolat/bg_settings@2x.png"; sourceTree = "<group>"; };
+		6E15B29015C7D08700789D78 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		6E15B29115C7D08700789D78 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		6E15B29215C7D08700789D78 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		6E2974EC1505EC77001A2FEE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6E4C77311510895900B46D7A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = WaktuSolat/Default.png; sourceTree = "<group>"; };
 		6E4C77321510895900B46D7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "WaktuSolat/Default@2x.png"; sourceTree = "<group>"; };
@@ -57,11 +62,6 @@
 		6E66D386150246C9001BAE53 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "WaktuSolat/background@2x.png"; sourceTree = "<group>"; };
 		6E66D38B150246C9001BAE53 /* headerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = headerView.png; path = WaktuSolat/headerView.png; sourceTree = "<group>"; };
 		6E66D38C150246C9001BAE53 /* headerView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "headerView@2x.png"; path = "WaktuSolat/headerView@2x.png"; sourceTree = "<group>"; };
-		6EAB793915B45CE20092A343 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		6EAB793A15B45CE20092A343 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		6EAB793B15B45CE20092A343 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
-		6EAB794715B467030092A343 /* bg_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_settings.png; path = WaktuSolat/bg_settings.png; sourceTree = "<group>"; };
-		6EAB794815B467030092A343 /* bg_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_settings@2x.png"; path = "WaktuSolat/bg_settings@2x.png"; sourceTree = "<group>"; };
 		6EB5F5051500F1AA00AF21BA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6EB5F5071500F2AC00AF21BA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = WaktuSolat/icon.png; sourceTree = "<group>"; };
 		6EB5F5081500F2AC00AF21BA /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "WaktuSolat/icon@2x.png"; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 		6EB5F5031500EFF600AF21BA /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				6EAB794715B467030092A343 /* bg_settings.png */,
-				6EAB794815B467030092A343 /* bg_settings@2x.png */,
+				6E14569315C7DC94005AC6EA /* bg_settings.png */,
+				6E14569415C7DC94005AC6EA /* bg_settings@2x.png */,
 				6E66D385150246C9001BAE53 /* background.png */,
 				6E66D386150246C9001BAE53 /* background@2x.png */,
 				6EE54955156E2D4A00CAA0EF /* btn_settings.png */,
@@ -188,9 +188,9 @@
 				6EB5F51A1500F3F200AF21BA /* WaktuSolatViewController.h */,
 				6EB5F51B1500F3F200AF21BA /* WaktuSolatViewController.m */,
 				6EB5F51C1500F3F200AF21BA /* WaktuSolatViewController.xib */,
-				6EAB793915B45CE20092A343 /* SettingViewController.h */,
-				6EAB793A15B45CE20092A343 /* SettingViewController.m */,
-				6EAB793B15B45CE20092A343 /* SettingViewController.xib */,
+				6E15B29015C7D08700789D78 /* SettingsViewController.h */,
+				6E15B29115C7D08700789D78 /* SettingsViewController.m */,
+				6E15B29215C7D08700789D78 /* SettingsViewController.xib */,
 				6EB5F5031500EFF600AF21BA /* Image */,
 				9F86DBB214F8E20500606189 /* Supporting Files */,
 				6ECFFB4514F8E8FA00151025 /* eSolat.plist */,
@@ -283,9 +283,9 @@
 				6EC72AD91539918100EA8132 /* toolbar_img@2x.png in Resources */,
 				6EE54957156E2D4A00CAA0EF /* btn_settings.png in Resources */,
 				6EE54958156E2D4A00CAA0EF /* btn_settings@2x.png in Resources */,
-				6EAB793D15B45CE20092A343 /* SettingViewController.xib in Resources */,
-				6EAB794915B467030092A343 /* bg_settings.png in Resources */,
-				6EAB794A15B467030092A343 /* bg_settings@2x.png in Resources */,
+				6E15B29415C7D08700789D78 /* SettingsViewController.xib in Resources */,
+				6E14569515C7DC94005AC6EA /* bg_settings.png in Resources */,
+				6E14569615C7DC94005AC6EA /* bg_settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +319,7 @@
 				6EB5F5181500F31F00AF21BA /* JakimSolatParser.m in Sources */,
 				6EB5F5191500F31F00AF21BA /* XPathQuery.m in Sources */,
 				6EB5F51D1500F3F200AF21BA /* WaktuSolatViewController.m in Sources */,
-				6EAB793C15B45CE20092A343 /* SettingViewController.m in Sources */,
+				6E15B29315C7D08700789D78 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
