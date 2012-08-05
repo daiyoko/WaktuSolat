@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "KawasanViewController.h"
 
 @interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {

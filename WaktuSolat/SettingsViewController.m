@@ -89,7 +89,13 @@
             /* Add some function here */
         }
     } else if(indexPath.section == 1) {
-        /* Add some function here */
+        if(indexPath.row == 0) {
+            /* Add some function here */
+        } else if(indexPath.row == 1) {
+            /* Add some function here */
+        } else if(indexPath.row == 2) {
+            [self showEmailModalView];
+        }
     }
 }
 
@@ -121,6 +127,59 @@
         return @"Version 1.3";
     else
         return @"";
+}
+
+- (void)showEmailModalView
+{
+	if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        
+        mailer.mailComposeDelegate = self;
+        
+        [mailer setSubject:@"Feedback"];
+        
+        NSArray *toRecipients = [NSArray arrayWithObjects:@"syahmi@wutmedia.com", nil];
+        [mailer setToRecipients:toRecipients];
+        
+        NSString *emailBody = @"";
+        [mailer setMessageBody:emailBody isHTML:NO];
+        
+        [self presentModalViewController:mailer animated:YES];
+        
+        [mailer release];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:@"Your device doesn't support the composer sheet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        [alert release];
+    }
+	
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+	switch (result)
+	{
+		case MFMailComposeResultCancelled:
+			NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued");
+			break;
+		case MFMailComposeResultSaved:
+			NSLog(@"Mail saved: you saved the email message in the Drafts folder");
+			break;
+		case MFMailComposeResultSent:
+			NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send the next time the user connects to email");
+			break;
+		case MFMailComposeResultFailed:
+			NSLog(@"Mail failed: the email message was nog saved or queued, possibly due to an error");
+			break;
+		default:
+			NSLog(@"Mail not sent");
+			break;
+	}
+    
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void) dealloc

@@ -16,6 +16,7 @@
 		6E4C77361510895900B46D7A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C77321510895900B46D7A /* Default@2x.png */; };
 		6E4C77371510895900B46D7A /* nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C77331510895900B46D7A /* nav_bar.png */; };
 		6E4C77381510895900B46D7A /* nav_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C77341510895900B46D7A /* nav_bar@2x.png */; };
+		6E5AB25915CF265000CECDE3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5AB25815CF265000CECDE3 /* MessageUI.framework */; };
 		6E640A551513C1550030B1F1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E640A541513C1550030B1F1 /* Settings.bundle */; };
 		6E66D3651502082D001BAE53 /* solat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D3641502082D001BAE53 /* solat.plist */; };
 		6E66D38D150246C9001BAE53 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E66D385150246C9001BAE53 /* background.png */; };
@@ -56,6 +57,7 @@
 		6E4C77321510895900B46D7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "WaktuSolat/Default@2x.png"; sourceTree = "<group>"; };
 		6E4C77331510895900B46D7A /* nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav_bar.png; path = WaktuSolat/nav_bar.png; sourceTree = "<group>"; };
 		6E4C77341510895900B46D7A /* nav_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nav_bar@2x.png"; path = "WaktuSolat/nav_bar@2x.png"; sourceTree = "<group>"; };
+		6E5AB25815CF265000CECDE3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6E640A541513C1550030B1F1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		6E66D3641502082D001BAE53 /* solat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = solat.plist; sourceTree = "<group>"; };
 		6E66D385150246C9001BAE53 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = WaktuSolat/background.png; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5AB25915CF265000CECDE3 /* MessageUI.framework in Frameworks */,
 				6E2974ED1505EC77001A2FEE /* QuartzCore.framework in Frameworks */,
 				6EB5F5061500F1AA00AF21BA /* libxml2.dylib in Frameworks */,
 				9F86DBAC14F8E20500606189 /* UIKit.framework in Frameworks */,
@@ -168,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB5F5051500F1AA00AF21BA /* libxml2.dylib */,
+				6E5AB25815CF265000CECDE3 /* MessageUI.framework */,
 				6E2974EC1505EC77001A2FEE /* QuartzCore.framework */,
 				9F86DBAB14F8E20500606189 /* UIKit.framework */,
 				9F86DBAD14F8E20500606189 /* Foundation.framework */,
